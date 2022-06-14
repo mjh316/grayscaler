@@ -20,6 +20,9 @@ jobs:
             archive: zip
     steps:
       - uses: actions/checkout@master
+      - uses: Dovyski/setup-opencv-action@v1
+        with:
+          opencv-version: '4.0.0'
       - name: Compile and release
         uses: rust-build/rust-build.action@v1.3.2
         env:
